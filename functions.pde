@@ -187,12 +187,12 @@ void updateRanking(){
   //ranking.rect(0,height*10/12,ranking.width,ranking.height/6);
   
  for(int n=0;n<rank.length;n++){
-    ranking.stroke(255-50*n,0,0);
-    ranking.fill(255-51*n,0,0);
-    ranking.text((n+1)+"° "+rank[n].name+ "\nanni:"+rank[n].years,0,height*((rank.length+1)*(n+1)/3)/((rank.length+1)*2),ranking.width,ranking.height/(rank.length+1));
+    ranking.stroke(255-250/rank.length*n,0,0);
+    ranking.fill(255-1-250/rank.length*n,0,0);
+    ranking.text((n+1)+"° "+rank[n].name+ "\nanni:"+rank[n].years,0,ranking.height/(rank.length+1)*(n+1),ranking.width,ranking.height/(rank.length+1));
     ranking.stroke(169);
     ranking.noFill(); 
-    ranking.rect(0,height*((rank.length+1)*(n+1)/3)/((rank.length+1)*2),ranking.width,ranking.height/(rank.length+1));
+    ranking.rect(0,ranking.height/(rank.length+1)*(n+1),ranking.width,ranking.height/(rank.length+1));
   }
   ranking.stroke(255,0,0);
   ranking.noFill();

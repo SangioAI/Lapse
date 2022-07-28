@@ -17,7 +17,7 @@ Option actual_optionB;
 State[] states;
 State[] rank;
 //String[] state_names = new String[]{"Abneganti", "Intrepidi", "Candidi", "Eruditi", "Pacifici"};
-String[] state_names = new String[]{"Sangio","Marco"};
+String[] state_names = new String[]{"Distretto 1","Distretto 2","Distretto 3","Distretto 4"};
 boolean change_card=true;
 boolean A_chosen=false;
 boolean B_chosen=false;
