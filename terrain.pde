@@ -13,6 +13,7 @@ void terrain_setup() {
 }
 
 void terrain_draw() {  
+  clear();
   flying-=delta;
     float yoff=flying;
     for (int y=0; y<h; y++) {

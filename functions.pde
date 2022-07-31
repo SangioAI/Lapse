@@ -31,6 +31,9 @@ void init_game(String dir_card_values){
   value_imgs[2] = loadImage(dir_value_images+"fa.png","png");
   value_imgs[3] = loadImage(dir_value_images+"s.png","png"); 
   
+  dead_img = loadImage(dir_value_images+"dead.png","png");
+  oracle_img = loadImage(dir_value_images+"oracle.png","png"); 
+  
   conseguences_gr = createGraphics(width-width/10,height-height/8);
   actual_value_gr = createGraphics(width,height);
   ranking = createGraphics(width,height);
@@ -112,6 +115,8 @@ PImage getCard(int index){
   img = loadImage(dir_card_images+""+index+".jpg");
   PGraphics g=createGraphics(img.width,img.height-img.height/5-(img.height*10)/(16*6));
   g.beginDraw();
+  g.clear();
+  g.background(0);
   g.image(img,0,-img.height/5);
   g.fill(255);
   g.noStroke();
@@ -122,6 +127,8 @@ PImage getCard(int index){
   //mask
   PGraphics mask=createGraphics(img.width,img.height);
   mask.beginDraw();
+  mask.clear();
+  mask.background(0);
   mask.fill(255);
   mask.noStroke();
   mask.smooth();
@@ -145,7 +152,9 @@ void updateRanking(){
       }
     }
   }
+  //ranking.clear();
   ranking.beginDraw();
+  ranking.clear();
   ranking.background(0);
   ranking.textSize(height/20);
   ranking.textAlign(CENTER,CENTER);
@@ -193,6 +202,9 @@ void updateRanking(){
     ranking.stroke(169);
     ranking.noFill(); 
     ranking.rect(0,ranking.height/(rank.length+1)*(n+1),ranking.width,ranking.height/(rank.length+1));
+    
+    if(rank[n].stopped)
+      ranking.image(dead_img, ranking.width/4 - max(ranking.height/(rank.length+1)/2, 50) , ranking.height/(rank.length+1)*(n+1)+ranking.height/(rank.length+1)/2-max(ranking.height/(rank.length+1)/2, 50)/2,max(ranking.height/(rank.length+1)/2, 50),max(ranking.height/(rank.length+1)/2, 50));
   }
   ranking.stroke(255,0,0);
   ranking.noFill();
@@ -223,7 +235,9 @@ void showActualValueGr(){
 }
 
 void putValueGr(PGraphics value_gr,int v[],int before_v[],color colors[]) {
+  //value_gr.clear();
   value_gr.beginDraw();
+  value_gr.clear();
   value_gr.background(0, 0, 0, 0);
   value_gr.noStroke();
   for (int n=0; n<v.length; n++) {
@@ -238,6 +252,7 @@ void putValueGr(PGraphics value_gr,int v[],int before_v[],color colors[]) {
     value_gr.image(value_imgs[n], 0, 0, value_gr.width/5, value_gr.height);
     value_gr.translate(value_gr.width/5, 0);
   }
+  println("done values");
   value_gr.endDraw();
 }
 

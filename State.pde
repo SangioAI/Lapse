@@ -8,6 +8,7 @@ class State{
   int stop=0;//anni per cui deve stare fermo
   final int num_stop=2;
   boolean stopped=false;
+  int oracles=2;
   
   public State(String name){
     this.name = name;
@@ -33,8 +34,11 @@ class State{
     if(year>0){
       if((stop)>0){
          stop--;
-         if(stop==0)
+         if(stop==0){
            values=new int[]{50,50,50,50};
+           stopped = false;
+         }
+          
        }else{
          years++;
        }

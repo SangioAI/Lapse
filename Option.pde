@@ -1,12 +1,13 @@
 class Option{
-  PGraphics img;
+  PGraphics img = createGraphics(width/3,height/2,P3D);
   int values[]=new int[4];
   int copy[][]=new int[20][4];
   int index=-1;
   
   void getOption(int index,String where,int colore){
-    img=createGraphics(width/3,height/2,P3D);
+    //img.clear(); 
     img.beginDraw();
+    img.clear();
     img.background(0,0,0,0);
     img.textSize(height/15);
     img.stroke(colore);

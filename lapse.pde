@@ -9,7 +9,8 @@ Cam camera;
 String dir_card_images =".//card_images//";
 String dir_value_images =".//value_images//";
 //String dir_card_values = "C:\\Users\\utenteadmin\\Desktop\\Processing\\lapse\\lapse\\carte.xlsx";
-String dir_card_values = "//Users//utenteadmin//Desktop//ext//Processing//lapse//lapse//carte.xlsx";
+//String dir_card_values = "C:\\Users\\PC\\OneDrive - Alma Mater Studiorum Università di Bologna\\Desktop\\Campo 2022\\carte.xlsx";
+String dir_card_values = "//Users//utenteadmin//marco//Developing//Processing//lapse//carte.xlsx";
 String[][] cards_stats;
 PImage actual_card;
 Option actual_optionA;
@@ -18,6 +19,7 @@ State[] states;
 State[] rank;
 //String[] state_names = new String[]{"Abneganti", "Intrepidi", "Candidi", "Eruditi", "Pacifici"};
 String[] state_names = new String[]{"Distretto 1","Distretto 2","Distretto 3","Distretto 4"};
+//String[] state_names = new String[]{"Distretto 1", "aa"};
 boolean change_card=true;
 boolean A_chosen=false;
 boolean B_chosen=false;
@@ -28,6 +30,8 @@ boolean peek=false;
 boolean show_ranking=false;
 boolean[] yet_used;
 PImage[] value_imgs = new PImage[4];
+PImage dead_img = new PImage();
+PImage oracle_img = new PImage();
 PGraphics actual_value_gr;
 PGraphics conseguences_gr;
 PGraphics ranking;
@@ -52,6 +56,7 @@ void setup() {
 }
 
 void draw() {
+  this.clear();
   this.background(0, 0, 0, 0);
   //rotation if one option chosen
   zoomControlzoom_peeking();
@@ -105,7 +110,8 @@ void changeCard() {
     } while (states[turn].stop>0);
 
     yet_used[index-1]=true;
-    actual_card = getCard(index);   
+    actual_card = getCard(index);
+    System.gc(); 
     actual_optionA.getOption(index-1, "sx", 255);
     actual_optionB.getOption(index-1, "dx", 255);
     camera.restore();
