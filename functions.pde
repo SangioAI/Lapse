@@ -4,7 +4,7 @@ InputStream inp=null;
 Workbook wb=null;
 
 void init_game(String dir_card_values){
-  String[][] saving = importExcel(dir_card_values);
+  String[][] saving = importExcel(dataPath("").replace("data",dir_card_values)); // get absolute path of file
   //init cards
   cards_stats= new String[saving.length-6][8];
   for(int r=6;r<saving.length;r++){
@@ -288,13 +288,11 @@ String[][] importExcel(String filepath) {
   catch(Exception e) {
     print("error in WorkbookFactory\n");
   }
-  print("hello\n");
   if(wb == null) 
     print(filepath, "\n");
   if(inp == null)
     print(filepath, "\n");
   Sheet sheet = wb.getSheetAt(0);
-  print("hello2\n");
   int sizeX = sheet.getLastRowNum();
   int sizeY = 100;
   for (int i=0;i<sizeX;++i) {

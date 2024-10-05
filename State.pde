@@ -2,7 +2,7 @@ class State{
   String name;
   int years;
   
-  int values[]=new int[]{50,50,50,50};
+  int values[]=new int[]{30,30,30,30};
   int saved[]= new int[4];
   color colors[]=new color[]{#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF};
   int stop=0;//anni per cui deve stare fermo
@@ -24,7 +24,6 @@ class State{
         values[n]=0;
         stop=num_stop;
         stopped=true;
-        println(name,"scoppiato");
       }
     }
     println("stato:",name,"valori:",values[0],values[1],values[2],values[3]);

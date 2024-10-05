@@ -78,7 +78,5 @@ class Option{
         print(copy[i][n]," ");
       }
     }
-    
-    println("ENTRATO OPTION");
   }
 }

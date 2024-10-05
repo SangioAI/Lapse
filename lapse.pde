@@ -1,25 +1,20 @@
 import java.io.*;
+import java.nio.file.FileSystems;
 import org.apache.poi.ss.usermodel.Sheet;
 import java.util.Scanner;
 import java.util.Arrays;
 
 Cam camera; 
-//String dir_card_images =".\\card_images\\";
-//String dir_value_images =".\\value_images\\";
-String dir_card_images =".//card_images//";
-String dir_value_images =".//value_images//";
-//String dir_card_values = "C:\\Users\\utenteadmin\\Desktop\\Processing\\lapse\\lapse\\carte.xlsx";
-//String dir_card_values = "C:\\Users\\PC\\OneDrive - Alma Mater Studiorum Università di Bologna\\Desktop\\Campo 2022\\carte.xlsx";
-String dir_card_values = "//Users//utenteadmin//marco//Developing//Processing//lapse//carte.xlsx";
+String dir_card_images = "./card_images/".replace("/", FileSystems.getDefault().getSeparator());
+String dir_value_images = "./value_images/".replace("/", FileSystems.getDefault().getSeparator());
+String dir_card_values = "carte.xlsx";
 String[][] cards_stats;
 PImage actual_card;
 Option actual_optionA;
 Option actual_optionB;
 State[] states;
 State[] rank;
-//String[] state_names = new String[]{"Abneganti", "Intrepidi", "Candidi", "Eruditi", "Pacifici"};
-String[] state_names = new String[]{"Distretto 1","Distretto 2","Distretto 3","Distretto 4"};
-//String[] state_names = new String[]{"Distretto 1", "aa"};
+String[] state_names = new String[]{"Player1", "Player2"};
 boolean change_card=true;
 boolean A_chosen=false;
 boolean B_chosen=false;
@@ -99,7 +94,6 @@ void changeCard() {
       turn=(turn+1)%state_names.length;
       if (turn==0) {
         year++;
-        println("STOP:", states[turn].stop);
         for (int n=0; n<states.length; n++)
           states[n].increaseYear();
         println("STOP:", states[turn].stop);
