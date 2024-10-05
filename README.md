@@ -37,13 +37,20 @@ Use the following command to play:
 
 # Customizations
 
-A number of things can be castomized:
-- Change the Players names: modify the variable `state_names`  in `lapse.pde`.
-  <img alt="state_names.png" src="./thumbnails/state_names.png"/>
-- Change the Cards images: change the images in `card_images`
+Everything can be customized, below a list of the main changes that can be made.
+
+## Change the Players names
+Modify the variable `state_names`  in `lapse.pde`.
+
+<img width=500 alt="state_names.png" src="./thumbnails/state_names.png"/>
+  
+## Change the Cards images
+Change the images in `card_images`
 > [!Note]
 > Images file names must be consistent with those in `carte.xlsx`
-- Change the Cards options: change the option in `carte.xlsx`
+
+## Change the Cards options
+Change the option in `carte.xlsx`.
   <br/>
   ```
   Values:
@@ -52,7 +59,7 @@ A number of things can be castomized:
     fa =>  military force value
     s =>  money value
 
-  Value Chages:
+  Value Changes:
     '!' means negative consequences (e.g. !a, !p, !fa, !s), while without is are meant to be positive (e.g. a, p, fa, s).
 
   Meaningful Columns:
@@ -65,8 +72,8 @@ A number of things can be castomized:
     '2° tanto(dx)': values large change of choosing RIGHT option
 
   ```
-  <img alt="image" src="./thumbnails/excel.png">
+  <img width=500 alt="image" src="./thumbnails/excel.png">
 
-
-Translation to other languanges are highly appriciated!
+------
+Cards and option translations to other languanges are highly encouraged😊.
   
