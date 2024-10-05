@@ -76,4 +76,5 @@ Change the option in `carte.xlsx`.
 
 ------
 Cards and option translations to other languanges are highly encouraged😊.
-  
+<br/>
+*2020©*
