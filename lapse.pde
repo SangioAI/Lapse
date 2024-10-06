@@ -5,8 +5,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 Cam camera; 
-String dir_card_images = "./card_images/".replace("/", FileSystems.getDefault().getSeparator());
-String dir_value_images = "./value_images/".replace("/", FileSystems.getDefault().getSeparator());
+String dir_card_images = "card_images/".replace("/", FileSystems.getDefault().getSeparator());
+String dir_value_images = "value_images/".replace("/", FileSystems.getDefault().getSeparator());
 String dir_card_values = "carte.xlsx";
 String[][] cards_stats;
 PImage actual_card;

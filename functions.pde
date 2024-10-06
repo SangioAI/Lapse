@@ -4,7 +4,7 @@ InputStream inp=null;
 Workbook wb=null;
 
 void init_game(String dir_card_values){
-  String[][] saving = importExcel(dataPath("").replace("data",dir_card_values)); // get absolute path of file
+  String[][] saving = importExcel(dataPath(dir_card_values)); // get absolute path of file
   //init cards
   cards_stats= new String[saving.length-6][8];
   for(int r=6;r<saving.length;r++){
@@ -26,13 +26,13 @@ void init_game(String dir_card_values){
   actual_optionA = new Option();
   actual_optionB = new Option();
   //init values
-  value_imgs[0] = loadImage(dir_value_images+"a.png","png");
-  value_imgs[1] = loadImage(dir_value_images+"p.png","png");
-  value_imgs[2] = loadImage(dir_value_images+"fa.png","png");
-  value_imgs[3] = loadImage(dir_value_images+"s.png","png"); 
+  value_imgs[0] = loadImage(dataPath(dir_value_images+"a.png"),"png");
+  value_imgs[1] = loadImage(dataPath(dir_value_images+"p.png"),"png");
+  value_imgs[2] = loadImage(dataPath(dir_value_images+"fa.png"),"png");
+  value_imgs[3] = loadImage(dataPath(dir_value_images+"s.png"),"png"); 
   
-  dead_img = loadImage(dir_value_images+"dead.png","png");
-  oracle_img = loadImage(dir_value_images+"oracle.png","png"); 
+  dead_img = loadImage(dataPath(dir_value_images+"dead.png"),"png");
+  oracle_img = loadImage(dataPath(dir_value_images+"oracle.png"),"png"); 
   
   conseguences_gr = createGraphics(width-width/10,height-height/8);
   actual_value_gr = createGraphics(width,height);
@@ -112,7 +112,7 @@ void showBoxes(){
 
 PImage getCard(int index){
   PImage img;
-  img = loadImage(dir_card_images+""+index+".jpg");
+  img = loadImage(dataPath(dir_card_images+""+index+".jpg"));
   PGraphics g=createGraphics(img.width,img.height-img.height/5-(img.height*10)/(16*6));
   g.beginDraw();
   g.clear();
